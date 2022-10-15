@@ -7,10 +7,6 @@ public class Bank {
     private int accountNumber;
     private double accountBalance;
 
-    public Bank(){
-
-    }
-
     public Bank(String accountHolder, int accountNumber, double accountBalance){
         this.accountHolder = accountHolder;
         this.accountNumber = accountNumber;

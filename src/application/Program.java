@@ -10,7 +10,7 @@ public class Program {
 
         Locale.setDefault(Locale.CANADA);
         Scanner scan = new Scanner(System.in);
-        Bank bankAccount = new Bank();
+        Bank bankAccount;
 
         jumpLine();
         System.out.println("\tWelcome to the Java Bank");
