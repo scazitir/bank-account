@@ -35,7 +35,7 @@ public class Bank {
         return accountBalance;
     }
 
-    public void withdrawal(double amount){
+    public void withdraw(double amount){
         if (amount < 0){
             System.err.println("Please inform an amount greater than $0.00");
         } else {

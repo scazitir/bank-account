@@ -42,7 +42,7 @@ public class Program {
         jumpLine();
 
         System.out.print("Withdrawal: $");
-        bankAccount.withdrawal(scan.nextDouble());
+        bankAccount.withdraw(scan.nextDouble());
 
         System.out.printf("You balance has been updated: $%.2f \n", bankAccount.getAccountBalance());
         scan.close();
