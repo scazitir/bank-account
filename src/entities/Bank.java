@@ -30,7 +30,7 @@ public class Bank {
     }
 
     public void withdrawal(double amount){
-        this.accountBalance -= amount - WITHDRAWAL_TAX;
+        this.accountBalance -= (amount + WITHDRAWAL_TAX);
     }
 
     public void deposit(double amount){
@@ -39,10 +39,15 @@ public class Bank {
 
     @Override
     public String toString() {
-        return "Bank{" +
-                "accountHolder='" + accountHolder + '\'' +
-                ", accountNumber=" + accountNumber +
-                ", accountBalance=" + accountBalance +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Hello, ");
+        sb.append(this.accountHolder);
+        sb.append(". (");
+        sb.append(this.accountNumber);
+        sb.append(")");
+        sb.append(" Balance $");
+        sb.append(String.format("%.2f", this.accountBalance));
+
+        return sb.toString();
     }
 }

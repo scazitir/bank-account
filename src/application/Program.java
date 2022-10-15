@@ -24,7 +24,21 @@ public class Program {
 
         Bank bankAccount = new Bank(accountHolder, accountNumber, firstDeposit);
 
-        System.out.println(bankAccount);
+        System.out.println("\n" + bankAccount);
+
+        System.out.println("\n====================================\n");
+
+        System.out.print("Deposit: $");
+        bankAccount.deposit(scan.nextDouble());
+
+        System.out.printf("You balance has been updated: $%.2f \n", bankAccount.getAccountBalance());
+
+        System.out.println("\n====================================\n");
+
+        System.out.print("Withdrawal: $");
+        bankAccount.withdrawal(scan.nextDouble());
+
+        System.out.printf("You balance has been updated: $%.2f", bankAccount.getAccountBalance());
         scan.close();
     }
 }
