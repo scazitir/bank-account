@@ -7,16 +7,26 @@ public class Bank {
     private int accountNumber;
     private double accountBalance;
 
+    public Bank(){
+
+    }
+
     public Bank(String accountHolder, int accountNumber, double accountBalance){
         this.accountHolder = accountHolder;
         this.accountNumber = accountNumber;
-        this.accountBalance = accountBalance;
+        deposit(accountBalance);
+    }
+
+    public Bank(String accountHolder, int accountNumber){
+        this.accountHolder = accountHolder;
+        this.accountNumber = accountNumber;
     }
 
     public String getAccountHolder() {
         return accountHolder;
     }
 
+    // If any user needs to change the name in the future, the program will have an option to do that.
     public void setAccountHolder(String accountHolder) {
         this.accountHolder = accountHolder;
     }
@@ -30,11 +40,19 @@ public class Bank {
     }
 
     public void withdrawal(double amount){
-        this.accountBalance -= (amount + WITHDRAWAL_TAX);
+        if (amount < 0){
+            System.err.println("Please inform an amount greater than $0.00");
+        } else {
+            this.accountBalance -= (amount + WITHDRAWAL_TAX);
+        }
     }
 
     public void deposit(double amount){
-        this.accountBalance += amount;
+        if (amount < 0){
+            System.err.println("Please inform an amount greater than $0.00");
+        } else {
+            this.accountBalance += amount;
+        }
     }
 
     @Override
